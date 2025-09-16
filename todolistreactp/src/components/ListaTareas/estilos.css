@@ -1,0 +1,45 @@
+.todo-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	gap: .5rem;
+}
+
+.todo-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: .75rem 1rem;
+	border: 1px solid var(--border);
+	border-radius: .75rem;
+	background: var(--surface);
+}
+
+.todo-item__main {
+	display: flex;
+	align-items: center;
+	gap: .75rem;
+}
+
+.todo-item__text.done {
+	text-decoration: line-through;
+	color: var(--muted);
+}
+
+.todo-item__remove {
+	background: transparent;
+	color: var(--muted);
+	border: none;
+	font-size: 1.1rem;
+}
+
+.todo-item__remove:hover {
+	color: var(--danger);
+}
+
+.empty {
+	text-align: center;
+	color: var(--muted);
+	padding: 1rem 0;
+}

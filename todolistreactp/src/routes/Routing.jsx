@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home';
+import Tareas from '../pages/Tareas';
 function Routing() {
   return (
     <div>
       <Router>
         <Routes>
-            <Route path="/Home" element={<Home/>}/>
+            <Route path="/Tareas" element={<Tareas/>}/>
         </Routes>
       </Router>
     </div>

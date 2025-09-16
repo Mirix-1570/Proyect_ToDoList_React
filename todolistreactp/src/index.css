@@ -1,11 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Tipografía */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
+  /* Tema base */
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --bg: #0f172a;           /* slate-900 */
+  --surface: #111827;      /* gray-900 */
+  --surface-2: #0b1220;    /* darker */
+  --text: #e5e7eb;         /* gray-200 */
+  --muted: #94a3b8;        /* slate-400 */
+  --border: #1f2937;       /* gray-800 */
+  --primary: #6366f1;      /* indigo-500 */
+  --success: #22c55e;      /* green-500 */
+  --danger: #ef4444;       /* red-500 */
+
+  color: var(--text);
+  background-color: var(--bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,12 +36,17 @@ a:hover {
   color: #535bf2;
 }
 
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  display: flex;
+  display: grid;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: radial-gradient(1000px 600px at 20% -10%, color-mix(in srgb, var(--primary), transparent 88%), transparent),
+              radial-gradient(800px 500px at 100% 0%, color-mix(in srgb, var(--success), transparent 90%), transparent),
+              var(--bg);
 }
 
 h1 {
@@ -36,33 +55,59 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  border-radius: .6rem;
+  border: 1px solid var(--border);
+  padding: .75rem 1rem;
+  font-size: 1rem;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--surface);
+  color: var(--text);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, filter .2s ease;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--primary);
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 3px auto color-mix(in srgb, var(--primary), transparent 70%);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --bg: #f6f7fb;
+    --surface: #ffffff;
+    --surface-2: #f1f5f9;
+    --text: #0f172a;
+    --muted: #475569;
+    --border: #e5e7eb;
+    --primary: #4f46e5;
+    --success: #16a34a;
+    --danger: #dc2626;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  body {
+    background: radial-gradient(1000px 600px at 20% -10%, color-mix(in srgb, var(--primary), transparent 95%), transparent),
+                radial-gradient(800px 500px at 100% 0%, color-mix(in srgb, var(--success), transparent 96%), transparent),
+                var(--bg);
   }
 }
+
+/* Utilidades y layout */
+.page {
+  width: min(960px, 92vw);
+  margin: 2rem auto;
+}
+
+.todo-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px color-mix(in srgb, #000, transparent 90%);
+  text-align: left;
+}
+
+.stack { height: 1rem; }
+.stack.sm { height: .5rem; }
+

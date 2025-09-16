@@ -6,12 +6,17 @@ import ListaTareas from '../components/ListaTareas/ListaTareas'
 
 function Tareas() {
   return (
-    <div>Tareas
+    <main className="page">
+      <section className="todo-card">
         <TittlePage />
+        <div className="stack sm" />
         <InputTareas />
+        <div className="stack sm" />
         <ContadorTareas />
+        <div className="stack" />
         <ListaTareas />
-    </div>
+      </section>
+    </main>
   )
 }
 

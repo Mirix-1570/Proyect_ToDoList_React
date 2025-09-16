@@ -1,0 +1,31 @@
+.counter {
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+}
+
+.counter__label {
+	color: var(--muted);
+}
+
+.counter__sep {
+	color: var(--muted);
+}
+
+.counter__badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2ch;
+	padding: .2rem .5rem;
+	border-radius: .5rem;
+	background: var(--surface-2);
+	color: var(--text);
+	border: 1px solid var(--border);
+	font-variant-numeric: tabular-nums;
+}
+
+.counter__badge--ok {
+	background: color-mix(in srgb, var(--success), transparent 80%);
+	border-color: color-mix(in srgb, var(--success), transparent 60%);
+}
