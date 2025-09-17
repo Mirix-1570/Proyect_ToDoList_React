@@ -1,0 +1,7 @@
+{
+  "tareas": [
+    { "id": 1, "nombre": "Comprar leche" },
+    { "id": 2, "nombre": "Estudiar React" },
+    { "id": 3, "nombre": "Llamar a mamá" }
+  ]
+}
